@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gruppe beitreten – WetterApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="login-container">
+        <h1>Gruppe beitreten</h1>
+        <form id="joinGroupForm">
+          <label for="group_name">Gruppenname:</label>
+          <input type="text" id="group_name" name="group_name" placeholder="Name der Gruppe" required />
+
+          <label for="group_code">Gruppencode:</label>
+          <input type="text" id="group_code" name="group_code" placeholder="Code eingeben" required />
+
+          <button type="submit" class="login-button">Beitreten</button>
+
+          <p class="register-link">Noch keine Gruppe? <a href="creategroup.html">Gruppe erstellen</a></p>
+        </form>
+      </div>
+    </div>
+    <script src="js/joinGroup.js"></script>
+  </body>
+</html>

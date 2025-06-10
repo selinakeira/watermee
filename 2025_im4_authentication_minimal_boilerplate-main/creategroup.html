@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gruppe erstellen – WetterApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="login-container">
+        <h1>Gruppe erstellen</h1>
+        <form id="createGroupForm">
+          <label for="group_name">Gruppenname:</label>
+          <input type="text" id="group_name" name="group_name" placeholder="Name der Gruppe" required />
+
+          <div id="codeContainer" style="display: none; margin-top: 10px;">
+            <label for="group_code">Dein Gruppencode:</label>
+            <input type="text" id="group_code" name="group_code" readonly />
+          </div>
+
+          <button type="submit" class="login-button">Gruppe erstellen</button>
+
+          <p class="register-link">Bereits Teil einer Gruppe? <a href="join-group.html">Gruppe beitreten</a></p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Funktion zum Erzeugen eines zufälligen Gruppencodes
+      function generateGroupCode(length = 6) {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let code = '';
+        for (let i = 0; i < length; i++) {
+          code += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return code;
+      }
+
+      // Formularverhalten
+      document.getElementById('createGroupForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Formular nicht abschicken
+
+        const groupName = document.getElementById('group_name').value.trim();
+
+        if (groupName === '') {
+          alert('Bitte gib einen Gruppennamen ein.');
+          return;
+        }
+
+        // Gruppencode erzeugen
+        const groupCode = generateGroupCode();
+
+        // Code anzeigen
+        const codeField = document.getElementById('group_code');
+        codeField.value = groupCode;
+
+        document.getElementById('codeContainer').style.display = 'block';
+
+        //Die Seite sendet noch keine Daten an einen Server!!!!!!!!!!!!!!!!!!!!
+        // Optional: Hier kannst du Daten an deinen Server schicken oder speichern
+        console.log('Gruppe erstellt:', groupName, 'Code:', groupCode);
+      });
+    </script>
+  </body>
+</html>
+
