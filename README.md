@@ -1,5 +1,3 @@
-# watermee# watermeim4
-
 # Planties – Deine Pflanzen im Griff
 
 **Website:** [www.waterme.ch](http://www.waterme.ch)
@@ -167,5 +165,5 @@ Die App "Planties" bietet eine solide Grundlage für digitales Pflanzenmanagemen
 
 ---
 
-**Erstellt von:** \[Cristina Fernandez und Selina D'Ostilio]
+**Erstellt von:** \Cristina Fernandez und Selina D'Ostilio
 **Datum:** Juni 2025
