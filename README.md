@@ -1,4 +1,4 @@
-# Planties – Deine Pflanzen im Griff
+# Planties 
 
 **Website:** [www.waterme.ch](http://www.waterme.ch)
 **Projektname:** Planties
