@@ -9,9 +9,31 @@
 </head>
 <body>
 
+     <!-- Header -->
+
+
+     <header class="main-header">
+      <div class="header-left">
+        <img src="Logo.png" alt="Planties Logo" class="logo-small" />
+        <span class="brand-title">Planties</span>
+      </div>
+  
+      <button class="burger" aria-label="Toggle navigation" onclick="toggleMenu()">☰</button>
+  
+      <nav class="nav-links" id="navLinks">
+        <a href="protected.html">My Plants</a>
+        <a href="addplant.html">Add Plants</a>
+        <a href="index.html" id="auth-link">Login/Logout</a>
+      </nav>
+    </header>
+  
+        <!-- Header Ende -->
+
   <header>
-    <h1 id="plant-name">Lade Pflanze...</h1>
+    <h1 id="plant-name">Load plants...</h1>
   </header>
+
+
 
   <div class="info-section">
     <h2>Information:</h2>
@@ -29,9 +51,12 @@
   </div>
 
   <div class="info-section">
-    <h2>Frequency in Days</h2>
-    <div class="pink-box" id="light-location">...</div>
+    <h2>Watering Frequency in days</h2>
+    <div class="pink-box" id="frequency">...</div>
   </div>
+
+  <button class="add-button" id="addPlantButton" onclick="addPlant()">+ Add Plant</button>
+
 
   <script src="js/plants.js"></script>
 </body>

@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value.trim();
 
   if (!email || !password) {
-    alert("Bitte fülle alle Felder aus.");
+    alert("Please fill in all fields.");
     return;
   }
 
@@ -22,13 +22,13 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (result.status === "success") {
-      alert("Login erfolgreich!");
+      alert("Login successful!");
       window.location.href = "protected.html"; // Weiterleitung nach erfolgreichem Login
     } else {
-      alert(result.message || "Login fehlgeschlagen. Bitte versuche es erneut.");
+      alert(result.message || "Login failed. Please try again.");
     }
   } catch (error) {
-    console.error("Fehler beim Login:", error);
-    alert("Ein Fehler ist aufgetreten. Bitte später erneut versuchen.");
+    console.error("Error during login:", error);
+    alert("Something went wrong. Please try again later.");
   }
 });

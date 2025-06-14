@@ -9,7 +9,7 @@ document
     const user_name = document.getElementById("user_name").value.trim();
 
     if (!email || !password || !user_name) {
-      alert("Bitte alle Felder ausfüllen.");
+      alert("Please fill in all fields.");
       return;
     }
 
@@ -23,13 +23,13 @@ document
       const result = await response.json();
 
       if (result.status === "success") {
-        alert("Registrierung erfolgreich! Du kannst dich jetzt einloggen.");
+        alert("Registration successful! You can now log in.");
         window.location.href = "login.html";
       } else {
-        alert(result.message || "Registrierung fehlgeschlagen.");
+        alert(result.message || "Registration failed.");
       }
     } catch (error) {
-      console.error("Fehler:", error);
-      alert("Es ist ein Fehler aufgetreten.");
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again later.");
     }
   });

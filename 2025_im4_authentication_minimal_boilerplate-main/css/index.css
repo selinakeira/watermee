@@ -1,0 +1,141 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Farben */
+  :root {
+    --bg-color: #DFE7BB;
+    --primary: #93B504;
+    --accent: #F4C107;
+    --input-bg: #F4A0BB;
+    --button-bg: #F4A0BB;
+    --button-bg-hover: #e18aa7;
+  }
+  
+  /* Allgemein */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hauptcontainer (weiße Box) */
+  .home-container {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  /* Logo */
+  .logo {
+    width: 100px;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+  
+  /* Überschrift */
+  h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 40pt;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  /* Einführungstext */
+  .intro-text {
+    font-size: 16pt;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  /* Button-Gruppe */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .home-button {
+    display: block;
+    padding: 1rem;
+    font-size: 18pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    background-color: var(--button-bg);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .home-button:hover {
+    background-color: var(--button-bg-hover);
+  }
+  
+  /* Infobox */
+  .info-box {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    font-size: 14pt;
+  }
+  
+  .info-box h2 {
+    color: var(--primary);
+    font-size: 20pt;
+    margin-bottom: 1rem;
+  }
+  
+  .info-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .info-box li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .home-container {
+      padding: 2rem 1.5rem;
+    }
+  
+    h1 {
+      font-size: 32pt;
+    }
+  
+    .intro-text {
+      font-size: 14pt;
+    }
+  
+    .home-button {
+      font-size: 16pt;
+    }
+  
+    .info-box {
+      font-size: 13pt;
+    }
+  
+    .info-box h2 {
+      font-size: 18pt;
+    }
+  }
+  

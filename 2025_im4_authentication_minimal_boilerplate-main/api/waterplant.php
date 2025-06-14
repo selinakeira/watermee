@@ -1,5 +1,5 @@
 <?php
-// api/addplant.php
+// api/waterplant.php
 session_start();
 header('Content-Type: application/json');
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Read and decode the JSON input
 $input = json_decode(file_get_contents('php://input'), true);
-$plantId = trim($input['id'] ?? ''); // JS sendet id unter "name"
+$plantId = trim($input['id'] ?? '');
 
 if (!$plantId) {
     echo json_encode(["status" => "error", "message" => "No plant ID provided"]);
@@ -28,23 +28,27 @@ if (!$plantId) {
 
 $userId = $_SESSION['user_id'];
 
-// Optional: check if plant already added by user
+// Prüfen, ob Benutzer diese Pflanze hat
 $check = $pdo->prepare("SELECT 1 FROM user_plants WHERE userid = :userid AND plantid = :plantid");
 $check->execute([
     ':userid' => $userId,
     ':plantid' => $plantId
 ]);
 
-if ($check->fetch()) {
-    echo json_encode(["status" => "error", "message" => "Plant already added"]);
+if (!$check->fetch()) {
+    echo json_encode(["status" => "error", "message" => "Plant not assigned to user"]);
     exit;
 }
 
-// Insert new entry into user_plants
-$insert = $pdo->prepare("INSERT INTO user_plants (userid, plantid) VALUES (:userid, :plantid)");
+// Gießaktion speichern
+$insert = $pdo->prepare("
+    INSERT INTO watering_log (userid, plantid, wateredat)
+    VALUES (:userid, :plantid, NOW())
+");
+
 $insert->execute([
     ':userid' => $userId,
     ':plantid' => $plantId
 ]);
 
-echo json_encode(["status" => true]);
+echo json_encode(["status" => "success"]);

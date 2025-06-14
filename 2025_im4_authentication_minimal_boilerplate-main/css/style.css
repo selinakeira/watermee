@@ -1,7 +1,5 @@
-/* style.css */
-
 /* Reset */
-•⁠  ⁠{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -64,7 +62,7 @@ label {
   display: block;
 }
 
-/* Eingabefelder – erweitert für text, email, password */
+/* Eingabefelder – für text, email, password */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -114,6 +112,10 @@ input::placeholder {
   color: var(--accent);
   font-weight: bold;
   text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
 }
 
 /* Responsiveness */
